@@ -11,7 +11,7 @@ import { IngredientComponent } from './settings/ingredient/ingredient.component'
 import { CategoryComponent } from './settings/category/category.component';
 import { DineInComponent } from './dine-in/dine-in.component';
 import { DineInFormComponent } from './dine-in/dine-in-form/dine-in-form.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+// import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './settings/profile/profile.component';
 
 const routes: Routes = [
@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'category', component: CategoryComponent},
   { path: 'dine-in', component: DineInComponent},
   { path: 'dine-in/:tableId', component: DineInFormComponent},
-  { path: 'dashboard', component: DashboardComponent},
+  // { path: 'dashboard', component: DashboardComponent},
   { path: 'profile' , component: ProfileComponent}
 ];
 
