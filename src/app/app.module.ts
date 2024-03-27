@@ -56,7 +56,8 @@ import { RoleFormComponent } from './settings/role/role-form/role-form.component
 import { StockFormComponent } from './settings/stock/stock-form/stock-form.component';
 import { TableFormComponent } from './settings/table/table-form/table-form.component';
 import { UserFormComponent } from './settings/user/user-form/user-form.component';
-
+import { ThemeComponent } from './components/theme/theme.component';
+import { MatRadioModule } from '@angular/material/radio';
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,6 +87,8 @@ import { UserFormComponent } from './settings/user/user-form/user-form.component
     StockFormComponent,
     TableFormComponent,
     UserFormComponent,
+    ThemeComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -116,7 +119,7 @@ import { UserFormComponent } from './settings/user/user-form/user-form.component
     MatCheckboxModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
-    
+    MatRadioModule,
   ],
   providers: [
     provideAnimationsAsync()

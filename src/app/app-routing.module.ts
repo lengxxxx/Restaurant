@@ -13,6 +13,7 @@ import { DineInComponent } from './dine-in/dine-in.component';
 import { DineInFormComponent } from './dine-in/dine-in-form/dine-in-form.component';
 // import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './settings/profile/profile.component';
+import { ThemeComponent } from './components/theme/theme.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,7 +29,9 @@ const routes: Routes = [
   { path: 'dine-in', component: DineInComponent},
   { path: 'dine-in/:tableId', component: DineInFormComponent},
   // { path: 'dashboard', component: DashboardComponent},
-  { path: 'profile' , component: ProfileComponent}
+  { path: 'profile' , component: ProfileComponent},
+  { path: 'theme', component: ThemeComponent},
+
 ];
 
 @NgModule({

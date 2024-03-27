@@ -1,62 +1,78 @@
-<mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-  
-      <mat-toolbar >
-        <img mat-card-image class="" src="/assets/logo/11111.png" alt="">
-        <!-- <img mat-card-image class="nav-logo-32" src="" alt="ardb-log-32x32"> -->
-        &nbsp; {{'WELCOME'}}
-      </mat-toolbar>
-      <mat-nav-list>
-        <mat-divider></mat-divider>
-        <a mat-list-item routerLink="/home" routerLinkActive="active">
-          <mat-icon>home</mat-icon>{{'home'}}
-        </a>
-        <a mat-list-item routerLink="/dashboard" routerLinkActive="active" >
-          <mat-icon>equalizer</mat-icon>{{'dashboard'}}</a>
-          
-          <a mat-list-item routerLink="/dine-in" routerLinkActive="active" >
-            <mat-icon>airline_seat_recline_normal</mat-icon>{{'Dine In'}}
-          </a>
-          
-          <a mat-list-item routerLink="/stock" routerLinkActive="active" >
-            <mat-icon>shopping_cart</mat-icon>stock</a>
-            
-        <mat-divider></mat-divider>
-        
-       
-        <a mat-list-item routerLink="/setting" routerLinkActive="active" >
-          <mat-icon>settings</mat-icon>{{'setting'}}
-        </a>
-  
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content style="background-color: #cacaca75;">
-      <mat-progress-bar style="position: absolute; top: 0%;" mode="indeterminate"
-        *ngIf="navService.isLoading | async"></mat-progress-bar>
-  
-      <!-- <embed src="../../assets/img/banner22.svg" width="100%" style="margin-bottom: -7px;"> -->
-  
-      <mat-toolbar color="blue">
-        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-        </button>
-        <span class="example-spacer"></span>
-        
-        
-  
-       
-        <a routerLink="/profile" routerLinkActive="active" mat-icon-button class="example-icon fkh"
-          aria-label="Example icon-button with share icon" title="{{'user-info' }}">
-          <mat-icon>person</mat-icon>
-        </a>
-  
-        <a (click)="logout()" mat-icon-button class="example-icon fkh" aria-label="Example icon-button with share icon"
-          title="{{'logout' }}">
-          <mat-icon>exit_to_app</mat-icon>
-        </a>
-      </mat-toolbar>
+<head>
+  <meta charset="utf-8">
+  <title>ARDB SCAN</title>
+</head>
+<div [id]="_theme" [class]="_fontSize">
+
+  <div class="nav-bar">
+    <div class="top-bar">
+      <div class="header" (click)="OnCollapse()">
+        <img mat-card-image class="nav-logo-32 logo" src="assets/svg/ardb-log-32x32.svg" alt="ardb-log-32x32">
+      </div>
+      <h4 class="title">P H & L Restaurant</h4>
+    </div>
+
+    <div class="top-bar-right">
+      <a routerLink="/profile" routerLinkActive="active" mat-icon-button class="example-icon fkh"
+        aria-label="Example icon-button with share icon" title="profile">
+        <mat-icon>person</mat-icon>
+      </a>
+      <a (click)="logout()" mat-icon-button class="example-icon fkh" aria-label="Example icon-button with share icon"
+        title='logout'>
+        <mat-icon>exit_to_app</mat-icon>
+      </a>
+    </div>
+  </div>
+
+  <div id="wrapper">
+    <div class="left-sidebar">
+      <nav id="sidebar" [class.collapsed]="collapsed">
+        <ul class="navigation">
+          <span *ngFor="let menu of menuLists">
+            <li >
+              <a [routerLink]="menu.router" routerLinkActive="active" ><i>
+                  <mat-icon>{{ menu . icon }}</mat-icon>
+                </i><span>{{ (menu . title) }}</span></a>
+            </li>
+          </span>
+          <li>
+            <a [routerLink]="'setting'" routerLinkActive="active" ><i>
+                <mat-icon> settings</mat-icon>
+              </i><span>{{ 'setting'}}</span> <i>
+              </i>
+              <mat-icon class="mat-icon1" (click)="onDropdown()">{{ dropdown ? 'arrow_drop_down' :
+                'arrow_drop_up' }}</mat-icon>
+            </a>
+          </li>
+          <ul *ngIf="dropdown" [class.collapsed]="collapsed" class="dropdown dropdown-6">
+            <span *ngFor="let menu of settingLists">
+              <li >
+                <a [routerLink]="menu.router" routerLinkActive="active" ><i>
+                    <mat-icon>{{ menu . icon }}</mat-icon>
+                  </i><span>{{ (menu . title)}}</span></a>
+              </li>
+            </span>
+          </ul>
+          <li>
+            <div class="divider"></div>
+          <li>
+            <a [routerLink]="'theme'" routerLinkActive="active" ><i><svg width="20" height="16" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20 1.341V0L10 1.36 0 0v14.64l9.632 1.31L10 16l.368-.05L20 14.64V2.683l-1.333.185V13.48l-8.003 1.089V2.612l8.003-1.088v.002L20 1.34zM9 15l-8-1.084V2l8 1.084V15z"
+                    fill-rule="nonzero" />
+                </svg></i><span>Theme</span></a>
+          </li>
+        </ul>
+
+      </nav>
+    </div>
+    <div (click)="OnCollapse()" [class.overlay]="!collapsed">
+      <!-- Over lay for mobile -->
+    </div>
+    <div class="container-fluid bg-color">
+      <!-- <div class="active__route">{{curentRouter}}</div> -->
+      <mat-progress-bar color="success" [class.is__loading]="!_loading" mode="indeterminate"></mat-progress-bar>
       <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  
+    </div>
+
+  </div>
