@@ -14,19 +14,9 @@ export class SettingsComponent {
 
   ngOnInit(): void { }
 
-  // checkAuth(roleName: string): boolean {
-  //   if (roleName === 'profile') {
-  //     return true;
-  //   } else {
-  //     return this.authenticationService.existAuthorization(roleName);
-  //   }
-  // }
+ 
 
   goToRoute(route: string) {
-    if (route === '/profile') {
-      this.router.navigateByUrl(route);
-    } else {
-      this.router.navigate([route]);
-    }
-}
+    this.router.navigate([route]);
+  }
 }

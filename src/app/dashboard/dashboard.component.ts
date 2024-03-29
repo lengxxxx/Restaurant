@@ -1,8 +1,8 @@
 // import { Component, ViewChild } from '@angular/core';
-// import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
-// import { ChartEvent } from 'chart.js/dist/core/core.plugins';
+// import {ChartConfiguration, ChartData, ChartEvent, ChartType, registerables } from 'chart.js';
+
 // import { Sale } from './dashboard';
-// import { Chart } from 'chart.js/dist';
+// import { Chart } from 'chart.js';
 // import { BaseChartDirective } from 'ng2-charts';
 // import { DashboardService } from './dashboard.service';
 // import { MenuService } from '../settings/menu/menu.service';
@@ -13,6 +13,7 @@
 // import { Total } from '../dine-in/total';
 // import Annotation from 'chartjs-plugin-annotation';
 // import DataLabelsPlugin from 'chartjs-plugin-datalabels';
+// Chart.register(...registerables)
 
 
 // @Component({

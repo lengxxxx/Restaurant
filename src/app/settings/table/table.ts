@@ -2,7 +2,7 @@
 export class Table {
     id!:number | null | string
     name?: string
-    value?:string
+    floor?:string
     description?:string
     isBusy! : boolean
     recipeId! : number

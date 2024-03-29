@@ -29,14 +29,12 @@ export class CategoryService {
   }
   put(data: category): Observable<category[]> {
     const url = `${this.apiUrl}/${data.id}`
-    // let url = 'http://localhost:5000/table/' + data.id ;
     return this.http.put<category[]>(url, data ,httpOptions);
   }
   
   delete(data:category): Observable<category[]>{
     const url = `${this.apiUrl}/${data.id}`
     
-    // let url = 'http://localhost:5000/table/' + data.id ;
     return this.http.delete<category[]>(url ,httpOptions);
   }
   

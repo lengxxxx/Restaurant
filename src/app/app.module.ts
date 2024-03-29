@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,13 +16,20 @@ import { DineInFormComponent } from './dine-in/dine-in-form/dine-in-form.compone
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { SettingsComponent } from './settings/settings.component';
+import { CategoryFormComponent } from './settings/category/category-form/category-form.component';
 import { CategoryComponent } from './settings/category/category.component';
+import { IngredientFormComponent } from './settings/ingredient/ingredient-form/ingredient-form.component';
 import { IngredientComponent } from './settings/ingredient/ingredient.component';
+import { MenuFormComponent } from './settings/menu/menu-form/menu-form.component';
 import { MenuComponent } from './settings/menu/menu.component';
 import { ProfileComponent } from './settings/profile/profile.component';
+import { StockFormComponent } from './settings/stock/stock-form/stock-form.component';
 import { StockComponent } from './settings/stock/stock.component';
+import { TableFormComponent } from './settings/table/table-form/table-form.component';
 import { TableComponent } from './settings/table/table.component';
+import { RoleFormComponent } from './settings/role/role-form/role-form.component';
 import { RoleComponent } from './settings/role/role.component';
+import { UserFormComponent } from './settings/user/user-form/user-form.component';
 import { UserComponent } from './settings/user/user.component';
 
 import { MatProgressBarModule } from '@angular/material/progress-bar';
@@ -43,21 +52,18 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'
 import { MatSelectModule } from '@angular/material/select';
-// import { NgChartsModule } from 'ng2-charts';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NavItemComponent } from './nav/nav-item/nav-item.component';
-import { CategoryFormComponent } from './settings/category/category-form/category-form.component';
-import { IngredientFormComponent } from './settings/ingredient/ingredient-form/ingredient-form.component';
-import { MenuFormComponent } from './settings/menu/menu-form/menu-form.component';
-import { RoleFormComponent } from './settings/role/role-form/role-form.component';
-import { StockFormComponent } from './settings/stock/stock-form/stock-form.component';
-import { TableFormComponent } from './settings/table/table-form/table-form.component';
-import { UserFormComponent } from './settings/user/user-form/user-form.component';
 import { ThemeComponent } from './components/theme/theme.component';
 import { MatRadioModule } from '@angular/material/radio';
+import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
+
+import { TranslocoRootModule } from './transloco-http-loader';
+const httpLoaderFactory = (http: HttpClient) => new TranslocoRootModule();
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,6 +94,7 @@ import { MatRadioModule } from '@angular/material/radio';
     TableFormComponent,
     UserFormComponent,
     ThemeComponent,
+    LanguageSelectorComponent,
 
   ],
   imports: [
@@ -114,12 +121,14 @@ import { MatRadioModule } from '@angular/material/radio';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    // NgChartsModule,
     MatGridListModule,
     MatCheckboxModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
     MatRadioModule,
+    HttpClientModule,
+    TranslocoRootModule,
+    
   ],
   providers: [
     provideAnimationsAsync()

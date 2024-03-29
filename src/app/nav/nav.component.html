@@ -9,10 +9,11 @@
       <div class="header" (click)="OnCollapse()">
         <img mat-card-image class="nav-logo-32 logo" src="assets/svg/ardb-log-32x32.svg" alt="ardb-log-32x32">
       </div>
-      <h4 class="title">P H & L Restaurant</h4>
+      <h4 class="title">{{'title' | transloco}}</h4>
     </div>
 
     <div class="top-bar-right">
+      <app-language-selector></app-language-selector>
       <a routerLink="/profile" routerLinkActive="active" mat-icon-button class="example-icon fkh"
         aria-label="Example icon-button with share icon" title="profile">
         <mat-icon>person</mat-icon>
@@ -32,13 +33,13 @@
             <li >
               <a [routerLink]="menu.router" routerLinkActive="active" ><i>
                   <mat-icon>{{ menu . icon }}</mat-icon>
-                </i><span>{{ (menu . title) }}</span></a>
+                </i><span>{{ (menu . title) | transloco }}</span></a>
             </li>
           </span>
           <li>
             <a [routerLink]="'setting'" routerLinkActive="active" ><i>
                 <mat-icon> settings</mat-icon>
-              </i><span>{{ 'setting'}}</span> <i>
+              </i><span>{{ 'setting' | transloco}}</span> <i>
               </i>
               <mat-icon class="mat-icon1" (click)="onDropdown()">{{ dropdown ? 'arrow_drop_down' :
                 'arrow_drop_up' }}</mat-icon>
@@ -49,7 +50,7 @@
               <li >
                 <a [routerLink]="menu.router" routerLinkActive="active" ><i>
                     <mat-icon>{{ menu . icon }}</mat-icon>
-                  </i><span>{{ (menu . title)}}</span></a>
+                  </i><span>{{ (menu . title) | transloco}}</span></a>
               </li>
             </span>
           </ul>

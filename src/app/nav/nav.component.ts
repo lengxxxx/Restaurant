@@ -117,22 +117,22 @@ export class NavComponent {
 
 export const MENU_LISTS = [
   {
-    title: 'Home',
+    title: 'home',
     icon: 'person_pin_circle',
     router: '/home',
   },
   {
-    title: 'Dashboard',
+    title: 'dashboard',
     icon: 'dashboard',
     router: '/dashboard',
   },
   {
-    title: 'Dine In',
+    title: 'dine-in',
     icon: 'event_note',
     router: '/dine-in',
   },
   {
-    title: 'Stock',
+    title: 'stock',
     icon: 'date_range',
     router: '/stock',
   },

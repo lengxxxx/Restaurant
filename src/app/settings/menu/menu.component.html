@@ -1,1 +1,47 @@
-<p>menu works!</p>
+<div class="content__flex">
+  <form action="">
+
+  <section class="section">
+
+
+    <mat-form-field class="btn-search" appearance="fill">
+      <mat-label >search</mat-label>
+      <input type="text" matInput (keyup)="applyFilter($event)">
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field> &nbsp;
+    <div class="button-search">
+
+    <button mat-raised-button color="primary"  (click)="newDailog()">New</button>
+  </div>
+
+  </section>
+</form>
+
+  <div class="mat-elevation-z1">
+    
+    <!-- {{_table | json}} -->
+    
+    <table>
+      <tr>
+        <th>No</th>
+        <th>Menu name</th>
+        <th>Category</th>
+        <th>Stock out</th>
+        <th>Price</th>
+        <th>Ingredient</th>
+        
+      </tr>
+      <tr *ngFor="let t of data">
+        <td>{{t.id}}</td>
+        <td>{{t.name}}</td>
+        <td>{{t.category}}</td>
+        <td>{{t.outStock}}</td>
+        <td *ngIf="t.price">{{t.price}}$</td>
+        <td *ngIf="!t.price">0 $</td>
+        <td>{{t.ingredient}}</td>
+        <button  mat-icon-button   (click) ="updateDailog(t)"><mat-icon>create</mat-icon></button>
+        <button mat-icon-button  (click) ="deleteConfirm(t)"><mat-icon>delete_sweep</mat-icon></button>
+      </tr>
+    </table>
+  </div>
+</div>

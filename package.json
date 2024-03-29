@@ -9,7 +9,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "server": "json-server --watch db.json --port 5000"
-
   },
   "private": true,
   "dependencies": {
@@ -28,11 +27,12 @@
     "@ngneat/transloco": "^3.2.0",
     "@types/intl-tel-input": "^18.1.4",
     "bootstrap": "^5.2.3",
-    
+    "chartjs-plugin-datalabels": "^2.2.0",
     "google-libphonenumber": "^3.2.34",
     "intl-tel-input": "^17.0.21",
-    "json-server": "^0.17.3",
+    "json-server": "^0.17.4",
     "mui-tel-input": "^5.1.2",
+    "ng2-charts": "^6.0.0",
     "ng2-tel-input": "^2.3.0",
     "ngx-bootstrap": "^11.0.2",
     "ngx-intl-tel-input": "^3.2.0",
@@ -45,6 +45,8 @@
     "@angular-devkit/build-angular": "^17.3.0",
     "@angular/cli": "^17.3.0",
     "@angular/compiler-cli": "^17.3.0",
+    "@types/chart.js": "^2.9.41",
+    "@types/chartjs-plugin-annotation": "^0.5.5",
     "@types/jasmine": "~5.1.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
