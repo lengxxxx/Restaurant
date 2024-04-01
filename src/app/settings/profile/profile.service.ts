@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { ResponseModel } from '../../_helper/responseModel';
-import { User } from '../user/user';
+import { USER_TYPE } from '../user/user';
 
 
 @Injectable({
@@ -17,9 +17,9 @@ export class ProfileService {
     return this.http.get<ResponseModel>(`${environment.apiUrl}/users/v1/view-profile`);
   }
 
-  updateProfile(user: User): Observable<User> {
+  updateProfile(user: USER_TYPE): Observable<USER_TYPE> {
     if (user.profilePic?.includes('http')) user.profilePic = undefined
-    return this.http.put<User>(`${environment.apiUrl}/users/v1/update-profile`, user);
+    return this.http.put<USER_TYPE>(`${environment.apiUrl}/users/v1/update-profile`, user);
   }
 
   profileImage(id: string) {

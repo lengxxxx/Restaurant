@@ -8,21 +8,21 @@ export class Element_SETTING {
 export const MENU_SETTING: Element_SETTING[] = [
   {
     id: 1, name: "user",
-    routerLink: '/user', icon: 'person'
+    routerLink: '/user', icon: 'perm_identity'
   }, {
     id: 2, name: "category",
-    routerLink: '/category', icon: 'home'
+    routerLink: '/category', icon: 'fastfood'
   }, {
     id: 3, name: "role",
-    routerLink: '/role', icon: 'perm_data_setting'
+    routerLink: '/role', icon: 'border_color'
   }, {
     id: 5, name: "ingredient",
-    routerLink: '/ingredient', icon: 'person_add',
+    routerLink: '/ingredient', icon: 'local_dining',
   },{
     id: 5, name: "menu",
-    routerLink: '/menu', icon: 'person_add',
+    routerLink: '/menu', icon: 'date_range',
   },{
     id: 5, name: "table",
-    routerLink: '/table', icon: 'person_add',
+    routerLink: '/table', icon: 'event_seat',
   },
 ];

@@ -118,7 +118,7 @@ export class NavComponent {
 export const MENU_LISTS = [
   {
     title: 'home',
-    icon: 'person_pin_circle',
+    icon: 'home',
     router: '/home',
   },
   {
@@ -128,12 +128,12 @@ export const MENU_LISTS = [
   },
   {
     title: 'dine-in',
-    icon: 'event_note',
+    icon: 'airline_seat_recline_normal',
     router: '/dine-in',
   },
   {
     title: 'stock',
-    icon: 'date_range',
+    icon: 'menu',
     router: '/stock',
   },
   
@@ -147,7 +147,7 @@ export const SETTING_LIST = [
   },
   {
     title: 'category',
-    icon: 'perm_identity',
+    icon: 'fastfood',
     router: '/category',
   },
   {
@@ -157,17 +157,17 @@ export const SETTING_LIST = [
   },
   {
     title: 'ingredient',
-    icon: 'dashboard',
+    icon: 'local_dining',
     router: '/ingredient',
   },
   {
     title: 'menu',
-    icon: 'person_add',
+    icon: 'date_range',
     router: '/menu',
   },
   {
     title: 'table',
-    icon: 'setting',
+    icon: 'event_seat',
     router: '/table',
   },
 ]

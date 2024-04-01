@@ -1,14 +1,14 @@
 
-export class User {
-  id!: number
-  username!: string
-  gender!:string
-  email!: string
-  fullName!: string
-  departmentId!: number
-  departmentName!: string
-  address1!: string
-  address2!: string
+export class USER_TYPE {
+  
+  updateBy!: string;
+  updateAt!: string;
+  id!: number;
+  uuid!: string;
+  username!: string;
+  email!: string;
+  fullName!: string;
+  gender!: string;
+  isView?: boolean;
   profilePic?: string | undefined;
-
 }

@@ -121,6 +121,8 @@ form.form {
   gap: 0.5rem
 }
 
+
+
 .mat-mdc-raised-button:not(:disabled) {
   border-radius: 0.6250em;
 }
@@ -243,6 +245,14 @@ span,
 th,
 td {
   font-size: var(--fnts) !important;
+  /* color: black; */
+}
+
+.mat-label {
+  text-align: center;
+  font-size: 15px !important;
+  font-family: 'Koh Santepheap' !important;
+
 }
 
 .mat-mdc-progress-spinner {
@@ -280,9 +290,45 @@ td {
   visibility: hidden;
 }
 
-/* mat-card {
-  background: var(--clr-card-bg) !important;
-} */
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #00000000 !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-floating-label, .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-floating-label--float-above {
+  color: #000 !important;
+}
+
+.mat-mdc-select-arrow {
+  width: 10px;
+  height: 5px;
+  position: relative;
+  color: #000 !important;
+}
+
+.mat-mdc-option{
+  color: #000 !important;
+}
+
+div.mat-mdc-select-panel{
+  background-color: #eeeeee !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: rgb(255 255 255) !important;
+}
+
+.mat-mdc-select{
+  color: #000 !important;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__title {
+  /* color: var(--mdc-dialog-subhead-color, rgba(0, 0, 0, 0.87)); */
+  color: #000 !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: #000 !important;
+}
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {}

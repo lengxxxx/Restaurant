@@ -2,13 +2,13 @@
     <form action="">
         <section class="section">
             <mat-form-field class="btn-search">
-                <mat-label>search</mat-label>
+                <mat-label>{{'search' | transloco}}</mat-label>
                 <input type="text" matInput (keyup)="applyFilter($event)">
                 <mat-icon matSuffix>search</mat-icon>
             </mat-form-field> 
 
             <div class="button-search">
-                <button mat-raised-button color="primary" (click)="newDailog()">New</button>
+                <button mat-raised-button color="primary" (click)="newDailog()">{{'add'|transloco}} {{'new' | transloco}}</button>
             </div>
 
         </section>
@@ -16,9 +16,9 @@
     <div class="mat-elevation-z1 table content__flex__1">
         <table>
             <tr class="table-header">
-                <th>No</th>
-                <th>Ingredient</th>
-                <th>Value</th>
+                <th>{{'no' | transloco}}</th>
+                <th>{{'ingredient' | transloco}}</th>
+                <th>{{'value'  | transloco}}</th>
             </tr>
             <tr *ngFor="let t of data">
                 <td>{{t.id}}</td>

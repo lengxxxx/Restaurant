@@ -170,5 +170,9 @@
     "table": "Table",
     "ingredient": "Ingredient",
     "dine-in": "Dine In",
-    "stock": "Stock"
+    "stock": "Stock",
+    "floor":"Floor",
+    "value": "Value",
+    "stock-out":"Stock Out",
+    "price":"Price"
   }

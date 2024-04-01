@@ -4,6 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProfileService } from './profile.service';
 import { environment } from '../../../environments/environment';
+import { USER_TYPE } from '../user/user';
+import { ChangePasswordComponent } from '../../change-password/change-password.component';
 
 @Component({
   selector: 'app-profile',
@@ -17,7 +19,7 @@ export class ProfileComponent {
   acceptImage = environment.acceptImage;
   error = '';
   loading: boolean = false;
-  // profile: USER_TYPE = new USER_TYPE();
+  profile: USER_TYPE = new USER_TYPE();
   durationInSeconds = 3;
   constructor(
     private _snackBar: MatSnackBar,
@@ -101,14 +103,14 @@ export class ProfileComponent {
     // );
   }
 
-  // OpencChangepassword(): void {
-  //   const dialogRef = this.dialog.open(ChangePasswordComponent, {
-  //     width: '400px',
-  //   });
+  OpencChangepassword(): void {
+    const dialogRef = this.dialog.open(ChangePasswordComponent, {
+      width: '400px',
+    });
 
-  //   dialogRef.afterClosed().subscribe((result) => {
-  //     console.log('The dialog was closed', result);
-  //   });
-  // }
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed', result);
+    });
+  }
  
 }

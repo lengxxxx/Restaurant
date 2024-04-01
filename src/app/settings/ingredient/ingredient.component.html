@@ -3,13 +3,14 @@
     <section class="section">
 
       <mat-form-field class="btn-search">
-        <mat-label>search</mat-label>
+        <mat-label>{{'search' | transloco}}</mat-label>
         <input type="text" matInput (keyup)="applyFilter($event)">
         <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field> 
-      
+      </mat-form-field>
+
       <div class="button-search">
-        <button mat-raised-button color="primary" (click)="newDailog()">New</button>
+        <button mat-raised-button color="primary" (click)="newDailog()">{{'add' | transloco}} {{'new'
+          |transloco}}</button>
       </div>
 
     </section>
@@ -18,9 +19,9 @@
   <div class=" mat-elevation-z1 table content__flex__1">
     <table>
       <tr class="table-header">
-        <td>No</td>
-        <td>Ingredient name</td>
-        <td>Value</td>
+        <td>{{'no'| transloco}}</td>
+        <td>{{'ingredient' |transloco}}{{'name' | transloco}}</td>
+        <td>{{'value' | transloco}}</td>
       </tr>
       <tr *ngFor="let t of data">
         <td>{{t.id}}</td>
@@ -32,9 +33,9 @@
 
     </table>
 
-    <div class="table" *ngFor="let t of data">
+    <!-- <div class="table" *ngFor="let t of data">
 
-    </div>
+    </div> -->
   </div>
   <!-- <mat-paginator #paginator [length]="pagingModel?.totalElements" [pageIndex]="page" [pageSize]="size"
 [pageSizeOptions]="pageSizeOptions" (page)="pageChanged($event)" aria-label="Select page" class="paginator">
