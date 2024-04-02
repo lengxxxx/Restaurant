@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Recipe } from './recipe';
-import { ResponseModel } from '../_helper/responseModel';
+import { ResponseModel } from '../_helper/response-model';
 
 export const httpOptions = {
   headers: new HttpHeaders({

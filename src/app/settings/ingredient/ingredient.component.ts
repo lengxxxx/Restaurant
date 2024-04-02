@@ -5,7 +5,7 @@ import { IngredientService } from './ingredient.service';
 import { ConfirmService } from '../../confirm/confirm.service';
 import { IngredientFormComponent } from './ingredient-form/ingredient-form.component';
 import { environment } from '../../../environments/environment';
-import { PaggingModel } from '../../../app/_helper/responseModel';
+// import { PaggingModel } from '../../../app/_helper/responseModel';
 
 @Component({
   selector: 'app-ingredient',
@@ -17,7 +17,7 @@ export class IngredientComponent {
 
   data:  Ingredient[] = [];
   pageSizeOptions: number[] = environment.pageSizeOptions;
-  pagingModel?: PaggingModel;
+  // pagingModel?: PaggingModel;
   size = environment.pageSize;
   page = environment.currentPage;
   constructor(

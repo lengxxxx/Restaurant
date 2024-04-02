@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Recipe } from '../recipe';
 import { Table } from '../../settings/table/table';
-import { ResponseModel } from '../../_helper/responseModel';
+import { ResponseModel } from '../../_helper/response-model';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MenuService } from '../../settings/menu/menu.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';

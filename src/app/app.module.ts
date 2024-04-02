@@ -10,7 +10,7 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import { ForgetPasswordComponent } from './authentication/forget-password/forget-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ConfirmComponent } from './confirm/confirm.component';
-// import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { DineInComponent } from './dine-in/dine-in.component';
 import { DineInFormComponent } from './dine-in/dine-in-form/dine-in-form.component';
 import { HomeComponent } from './home/home.component';
@@ -60,8 +60,10 @@ import { NavItemComponent } from './nav/nav-item/nav-item.component';
 import { ThemeComponent } from './components/theme/theme.component';
 import { MatRadioModule } from '@angular/material/radio';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
-
+import { MatSliderModule } from '@angular/material/slider';  
 import { TranslocoRootModule } from './transloco-http-loader';
+import { BaseChartDirective } from 'ng2-charts';
+import { provideCharts, withDefaultRegisterables } from 'ng2-charts';
 const httpLoaderFactory = (http: HttpClient) => new TranslocoRootModule();
 
 @NgModule({
@@ -71,7 +73,7 @@ const httpLoaderFactory = (http: HttpClient) => new TranslocoRootModule();
     ForgetPasswordComponent,
     ChangePasswordComponent,
     ConfirmComponent,
-    // DashboardComponent,
+    DashboardComponent,
     DineInComponent,
     DineInFormComponent,
     HomeComponent,
@@ -95,6 +97,7 @@ const httpLoaderFactory = (http: HttpClient) => new TranslocoRootModule();
     UserFormComponent,
     ThemeComponent,
     LanguageSelectorComponent,
+
 
   ],
   imports: [
@@ -128,10 +131,12 @@ const httpLoaderFactory = (http: HttpClient) => new TranslocoRootModule();
     MatRadioModule,
     HttpClientModule,
     TranslocoRootModule,
-    
+    MatSliderModule,
+    BaseChartDirective
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    provideCharts(withDefaultRegisterables())
   ],
   bootstrap: [AppComponent]
 })
