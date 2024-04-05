@@ -1,90 +1,92 @@
-<main class="main-container">
-    <div class="main-title">
-        <h2>Dashboard</h2>
-    </div>
+<section class="section">
+    <!-- <form>
+        <mat-slider align="center" min="1" max="4" showTickMarks>
+            <input [value]="breakpoint"  [(ngModel)]="breakpoint" matSliderThumb>
+        </mat-slider>
+        <mat-label>Value</mat-label>
+        <input matInput type="number" [(ngModel)]="value">
+    </form> -->
+    <mat-slider
+    class="example-margin"
+    [disabled]="disabled"
+    [max]="4"
+    [min]="1"
+    [step]="step"
+    [discrete]="thumbLabel"
+    [showTickMarks]="showTicks">
+  <input matSliderThumb [(ngModel)]="value" #slider>
+</mat-slider>
 
 
-    <div class="main-cards">
-        <div class="card">
-            <div class="card-inner">
-                <h3>Product</h3>
-                <mat-icon class="material-icons-outlined">inventory_2</mat-icon>
-            </div>
-            <h1>{{menuCount}}</h1>
-        </div>
+    {{value}}
+
+    <mat-grid-list [cols]="value" rowHeight="4:3" [gutterSize]="'17px'">
+
+        <mat-grid-tile>
+            <mat-card class="dashboard-card">
+                <mat-card-title>
+                    <h1>{{'product' |transloco}}</h1>
+                </mat-card-title>
+                <mat-card-title-group class="center">
+                    <mat-icon>inventory_2</mat-icon>
+                    <mat-card-subtitle>
+                        <div>
+                            <h1>{{menuCount}}</h1>
+                        </div>
+                    </mat-card-subtitle>
+                </mat-card-title-group>
+            </mat-card>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+
+            <mat-card class="dashboard-card1">
+                <mat-card-title>
+                    <h1>{{'categories' | transloco}}</h1>
+                </mat-card-title>
+                <mat-card-title-group class="center">
+                    <mat-icon> production_quantity_limits </mat-icon>
+                    <mat-card-subtitle>
+                        <div>
+                            <h1>{{categoryCount}}</h1>
+                        </div>
+                    </mat-card-subtitle>
+                </mat-card-title-group>
+            </mat-card>
+        </mat-grid-tile>
 
 
-        <div class="card">
-            <div class="card-inner">
-                <h3>Categories</h3>
-                <mat-icon class="material-icons-outlined"> production_quantity_limits </mat-icon>
-
-            </div>
-            <h1>{{categoryCount}}</h1>
-        </div>
-
-
-        <div class="card">
-            <div class="card-inner">
-                <h3>Table</h3>
-                <mat-icon class="material-icons-outlined">
-                    table_restaurant</mat-icon>
-            </div>
-            <h1>{{tableCount}}</h1>
-        </div>
+        <mat-grid-tile>
+            <mat-card class="dashboard-card2">
+                <mat-card-title>
+                    <h1>{{'table' | transloco}}</h1>
+                </mat-card-title>
+                <mat-card-title-group class="center">
+                    <mat-icon> table_restaurant</mat-icon>
+                    <mat-card-subtitle>
+                        <div>
+                            <h1>{{tableCount}}</h1>
+                        </div>
+                    </mat-card-subtitle>
+                </mat-card-title-group>
+            </mat-card>
+        </mat-grid-tile>
 
 
-        <div class="card">
-            <div class="card-inner">
-                <h3>Ingredient</h3>
-                <mat-icon class="material-icons-outlined">restaurant_menu</mat-icon>
-            </div>
-            <h1>{{ingredientCount}}</h1>
-            
-        </div>
-    </div>
-
-      
-
-    
-    
-    <div >
-        <!-- <div fxFlex="49%" fxFlex.md="49%" fxFlex.sm="97%" fxFlex.xs="95%" >
-    <canvas
-        baseChart
-        class="chart"
-        [data]="lineChartData"
-        [options]="lineChartOptions"
-        [type]="lineChartType"
-        (chartHover)="chartHovered($event)"
-        (chartClick)="chartClicked($event)"
-    ></canvas>
-</div> -->
-<!-- <div fxFlex="49%" fxFlex.md="49%" fxFlex.sm="97%" fxFlex.xs="95%" >
-
-    <canvas
-        baseChart
-        class="chart"
-        [data]="barChartData"
-        [options]="barChartOptions"
-        [plugins]="barChartPlugins"
-        [type]="barChartType"
-        (chartHover)="chartHovered($event)"
-        (chartClick)="chartClicked($event)"
-        >
-    </canvas>
-</div> -->
-    
-<div fxFlex="49%" fxFlex.md="49%" fxFlex.sm="97%" fxFlex.xs="95%" >
-
-<div class="row">
-    <div class="col-lg-6">
-        <!-- <h2>Pie Chart</h2> -->
-        <canvas id="piechart"></canvas>
-    </div>
-</div>
-</div>
-
-</div>
-        
-</main>
+        <mat-grid-tile>
+            <mat-card class="dashboard-card2">
+                <mat-card-title>
+                    <h1>{{'ingredient' | transloco}}</h1>
+                </mat-card-title>
+                <mat-card-title-group class="center">
+                    <mat-icon>restaurant_menu</mat-icon>
+                    <mat-card-subtitle>
+                        <div>
+                            <h1>{{ingredientCount}}</h1>
+                        </div>
+                    </mat-card-subtitle>
+                </mat-card-title-group>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</section>

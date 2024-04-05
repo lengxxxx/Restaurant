@@ -79,11 +79,11 @@
       "iconSrc": "taco.png"
     },
     {
-      "name": "soup",
-      "ingredient": "duck",
+      "name": "SOUP",
+      "ingredient": "beef",
       "category": "Fast-Food",
       "price": 5,
-      "outStock": 0.5,
+      "outStock": 1,
       "id": 18,
       "iconSrc": "ramen.png"
     }
@@ -137,6 +137,11 @@
       "ingredient": "duck",
       "value": "45",
       "id": 4
+    },
+    {
+      "ingredient": "leng",
+      "value": "1",
+      "id": 5
     }
   ],
   "user": [

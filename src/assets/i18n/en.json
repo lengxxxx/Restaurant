@@ -84,6 +84,7 @@
     "history": "History",
     "create": "Create",
     "category": "Category ",
+    "categories":"Categories",
     "created": "Created",
     "view": "View",
     "document": "Document",
@@ -174,5 +175,6 @@
     "floor":"Floor",
     "value": "Value",
     "stock-out":"Stock Out",
-    "price":"Price"
+    "price":"Price",
+    "product":"Product"
   }

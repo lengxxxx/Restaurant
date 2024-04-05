@@ -17,7 +17,7 @@
     border-color: var(--mdc-elevated-card-container-color);
     box-shadow: var(--mdc-elevated-card-container-elevation);
     width: 88%;
-    height: 90%;
+    height: 95%;
 }
 .text{
     text-align: center;

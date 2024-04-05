@@ -93,6 +93,7 @@
     "person-in-charge": "អ្នក​ទទួលបន្ទុក",
     "recommendation": "អនុសាសន៍",
     "category": "ប្រភេទ",
+    "categories":"ប្រភេទ",
     "requesting-date": "កាលបរិច្ឆេទស្នើសុំ",
     "received-date": "កាលបរិច្ឆេទទទួល",
     "view": "មើល",
@@ -208,5 +209,6 @@
     "floor":"ជាន់",
     "value": "ចំនួន",
     "stock-out":"ដកចេញពីស្តុកចំនួន",
-    "price":"តម្លៃ"
+    "price":"តម្លៃ",
+    "product":"ផលិតផល"
 }

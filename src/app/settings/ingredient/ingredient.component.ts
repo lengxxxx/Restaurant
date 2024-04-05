@@ -66,7 +66,6 @@ export class IngredientComponent {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.data = data;
-    console.log("data----", data);
     
     this.dialog
       .open(IngredientFormComponent, dialogConfig)

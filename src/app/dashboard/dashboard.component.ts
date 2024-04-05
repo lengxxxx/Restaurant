@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Sale } from './dashboard';
 import { DashboardService } from './dashboard.service';
 import { MenuService } from '../settings/menu/menu.service';
@@ -22,7 +22,7 @@ import Annotation from 'chartjs-plugin-annotation';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
+export class DashboardComponent  implements OnInit{
  
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined ;
   private newLabel? = 'label';
@@ -36,6 +36,18 @@ export class DashboardComponent {
   labeldata:any[]=[];
   realdata:any[]=[];
   colordata:any[]=[];
+  breakpoint: number | undefined;
+  value = 4;
+  autoTicks = false;
+  disabled = false;
+  invert = false;
+  max = 100;
+  min = 0;
+  showTicks = false;
+  step = 1;
+  thumbLabel = false;
+  vertical = false;
+  tickInterval = 1;
 
   constructor(
     private menuService: MenuService,
@@ -53,7 +65,7 @@ export class DashboardComponent {
   }
   
   ngOnInit(): void {
-   
+    // this.updateGridSize();
     this.service.Getchartinfo().subscribe(result => {
       this.chartdata = result;
       if(this.chartdata!=null){
@@ -63,13 +75,29 @@ export class DashboardComponent {
           this.realdata.push(this.chartdata[i].amount);
           this.colordata.push(this.chartdata[i].colorcode);
         }
-        
         this.RenderChart(this.labeldata,this.realdata,this.colordata);
       }
-      
     })
-   
   }
+
+  getSliderTickInterval(): number | 'auto' {
+    if (this.showTicks) {
+      return this.autoTicks ? 'auto' : this.tickInterval;
+    }
+
+    return 0;
+  }
+  // onResize(event: any) {
+  //   this.updateGridSize();
+  // }
+
+  // updateGridSize(): void {
+  //   this.breakpoint = window.innerWidth <= 600 ? 1 : 4;
+  // }
+  
+  
+
+
   RenderChart(labeldata:any,maindata:any,colordata:any){
     const myChart = new Chart("piechart", {
       type: 'bar',
@@ -356,7 +384,5 @@ export class DashboardComponent {
   priceOrder(){ 
     // const array: any = this.order.map(o => o.name);
   }
-  
-  
-  
+
 }
