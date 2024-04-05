@@ -16,6 +16,13 @@ export const environment = {
   durationInSeconds: 5,
   du: 1000,
   acceptType: "application/vnd.ms-powerpoint, application/vnd.openxmlformats-officedocument.presentationml.slideshow, application/vnd.openxmlformats-officedocument.presentationml.presentation, .doc, .docx, text/plain, application/vnd.ms-powerpoint, application/msword, application/pdf,.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel, image/png, image/gif, image/jpeg",
+  acceptExcel: ".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel,",
+  acceptImage: "image/* ,image/png, image/gif, image/jpeg",
+  viewAbleExtension: ['pdf', 'PDF', 'xlsx', 'XLSX', 'jpg', 'JPG', 'jpeg', 'JPEG', 'png', 'PNG', 'gif', 'GIF', 'docx', 'DOCX'],
+  imgExtension: ['jpg', 'JPG', 'jpeg', 'JPEG', 'png', 'PNG', 'gif', 'GIF'],
+  pdfExtension: ['pdf', 'PDF'],
+  excelExtension: ['xlsx', 'XLSX'],
+  wordExtension: ['docx', 'DOCX']
 };
 
 /*

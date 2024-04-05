@@ -8,6 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "uat": "ng build  --configuration=uat --aot --output-hashing=all",
     "server": "json-server --watch db.json --port 5000"
   },
   "private": true,
