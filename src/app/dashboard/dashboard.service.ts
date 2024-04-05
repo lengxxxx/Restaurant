@@ -28,5 +28,4 @@ export class DashboardService {
     return this.http.put<Sale>(url, data, httpOptions);
   }
   
-  
 }

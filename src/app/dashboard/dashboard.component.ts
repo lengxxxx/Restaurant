@@ -16,7 +16,6 @@ import { Chart, ChartConfiguration, ChartData, ChartEvent, ChartType } from 'cha
 import DataLabelsPlugin from 'chartjs-plugin-datalabels';
 import Annotation from 'chartjs-plugin-annotation';
 
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -59,13 +58,10 @@ export class DashboardComponent  implements OnInit{
     
   ) {
     Chart.register(Annotation);
-    
     this.getAll();
- 
   }
   
   ngOnInit(): void {
-    // this.updateGridSize();
     this.service.Getchartinfo().subscribe(result => {
       this.chartdata = result;
       if(this.chartdata!=null){
@@ -84,21 +80,10 @@ export class DashboardComponent  implements OnInit{
     if (this.showTicks) {
       return this.autoTicks ? 'auto' : this.tickInterval;
     }
-
     return 0;
   }
-  // onResize(event: any) {
-  //   this.updateGridSize();
-  // }
 
-  // updateGridSize(): void {
-  //   this.breakpoint = window.innerWidth <= 600 ? 1 : 4;
-  // }
-  
-  
-
-
-  RenderChart(labeldata:any,maindata:any,colordata:any){
+    RenderChart(labeldata:any,maindata:any,colordata:any){
     const myChart = new Chart("piechart", {
       type: 'bar',
       data: {
@@ -109,7 +94,6 @@ export class DashboardComponent  implements OnInit{
               backgroundColor: colordata,
               borderColor: [
                   'rgba(255, 99, 132, 1)',
-                  
               ],
               borderWidth: 1
           }]
@@ -124,10 +108,8 @@ export class DashboardComponent  implements OnInit{
   });
   }
   
-  
   getAll() {
     this.menuService.gets().subscribe((res) => {
-      // console.log("res::",res);
       this.menuCount = res.length;
     });
     
@@ -160,13 +142,10 @@ export class DashboardComponent  implements OnInit{
       let _arr : Total[] = res[0].order 
       // const array: any = _arr.map(o => o.price);
       // this.dataSet = array ;
-      
-      
       const array_price: any = _arr.map(p => p.price * p.units)
     // this.granTotal = array_price.reduce((a: number, b: number) => a + b, 0)
       
   });
-  
 }
   
   public lineChartData: ChartConfiguration['data'] = {
@@ -222,7 +201,6 @@ export class DashboardComponent  implements OnInit{
 
   public barChartOptions: ChartConfiguration['options'] = {
     responsive: true,
-    // We use these empty structures as placeholders for dynamic theming.
     scales: {
       x: {},
       y: {
@@ -242,7 +220,6 @@ export class DashboardComponent  implements OnInit{
 
   public barChartType: ChartType = 'bar';
   public barChartPlugins = [DataLabelsPlugin];
-
   public barChartData: ChartData<'bar'> = {
     labels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'],
     datasets: [
@@ -250,7 +227,6 @@ export class DashboardComponent  implements OnInit{
       { data: [28, 48, 40, 19, 86, 27, 90], label: 'Customers' },
     ],
   };
-
   public lineChartOptions: ChartConfiguration['options'] = {
     
     elements: {
@@ -259,7 +235,6 @@ export class DashboardComponent  implements OnInit{
       },
     },
     scales: {
-      // We use this empty structure as a placeholder for dynamic theming.
       y: {
         position: 'left',
       },
@@ -299,8 +274,6 @@ export class DashboardComponent  implements OnInit{
     },
   };
 
-
-
   private static generateNumber(i: number): number {
     return Math.floor(Math.random() * (i < 2 ? 100 : 1000) + 1);
   }
@@ -314,8 +287,6 @@ export class DashboardComponent  implements OnInit{
     }
     this.chart?.update();
   }
-
-  // events
   public chartClicked({
     event,
     active,
@@ -354,7 +325,6 @@ export class DashboardComponent  implements OnInit{
   }
 
   public changeColor(): void {
-    // this.lineChartData.datasets[2].borderColor = 'green';
     for (var i = 0; i < this.lineChartData.datasets.length; i++) {
       let color = this.getRandomColor()
       this.lineChartData.datasets[i].borderColor = color;
@@ -380,9 +350,4 @@ export class DashboardComponent  implements OnInit{
 
     this.chart?.update();
   }
-  
-  priceOrder(){ 
-    // const array: any = this.order.map(o => o.name);
-  }
-
 }
